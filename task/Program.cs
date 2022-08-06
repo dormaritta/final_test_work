@@ -12,31 +12,30 @@
 ["1234", "1567", "-2", "computer science"] -> ["-2"]
 ["Russia", "Denmark", "Kazan"] -> [] */
 
-string[] FillArray()
-{
-    Console.WriteLine("Введите элементы для сортировки через пробел: ");
-    string[] array = Console.ReadLine()!.Split(" ");
-    return array;
-}
+string[] array = new string[4] {"hello", "2", "world", ":-)"};
+string[] SortedArray = new string[array.Length];
 
-void ArraySorting(string[] massif)
+void ArraySorting(string[] array, string[] SortedArray)
 {
-    int ElementSize = 3;
-    var element = string.Empty;
-    string[] SortedArray = new string[massif.Length];
+    int count = 0;
 
-    for (int i = 0; i < massif.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        element = massif[i];
-
-        if (element.Length <= ElementSize)
+        if (array[i].Length <= 3)
         {
-            SortedArray[i] = massif[i];
+            SortedArray[count] = array[i];
+            count++;
         }
     }
-    SortedArray = SortedArray.Where(x => x != null).ToArray();
-    Console.WriteLine($"Отсортированный массив: {string.Join(", ", SortedArray)}");
 }
 
-string[] result = FillArray();
-ArraySorting(result);
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+}
+
+ArraySorting(array, SortedArray);
+PrintArray(SortedArray);

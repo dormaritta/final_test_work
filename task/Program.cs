@@ -12,17 +12,16 @@
 ["1234", "1567", "-2", "computer science"] -> ["-2"]
 ["Russia", "Denmark", "Kazan"] -> [] */
 
-string[] array = new string[3] { "Russia", "Denmark", "Kazan" };
-Console.Write($"[{string.Join(", ", array)}] => ");
-string[] SortedArray = new string[array.Length];
+string[] array = new string[4] { "floppa", "flip", "flop", ":-)" }; //задан массив из 4-х эл-в
+string[] SortedArray = new string[array.Length]; //объявляется отсортированный массив
 
-void ArraySorting(string[] array, string[] SortedArray)
+void ArraySorting(string[] array, string[] SortedArray) //метод сортировки массива
 {
-    int count = 0;
+    int count = 0; //счетчик для прохода по элементам массива
 
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++) //поиск элементов меньше 3-х символов
     {
-        if (array[i].Length <= 3)
+        if (array[i].Length <= 3) 
         {
             SortedArray[count] = array[i];
             count++;
@@ -30,7 +29,7 @@ void ArraySorting(string[] array, string[] SortedArray)
     }
 }
 
-void PrintArray(string[] array)
+void PrintArray(string[] array) //вывод 
 {
     for (int i = 0; i < array.Length; i++)
     {

@@ -12,7 +12,8 @@
 ["1234", "1567", "-2", "computer science"] -> ["-2"]
 ["Russia", "Denmark", "Kazan"] -> [] */
 
-string[] array = new string[4] {"hello", "2", "world", ":-)"};
+string[] array = new string[3] { "Russia", "Denmark", "Kazan" };
+Console.Write($"[{string.Join(", ", array)}] => ");
 string[] SortedArray = new string[array.Length];
 
 void ArraySorting(string[] array, string[] SortedArray)
